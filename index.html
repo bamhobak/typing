@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
   이핑재핑타이핑 (Hangul Jamo Wordle)
-  @version v1.0.22
+  @version v1.0.23
   한글 단어를 자모 5개로 풀어쓴 뒤, 다섯 번 안에 맞히는 게임.
   단일 HTML 파일 — 브라우저에서 바로 실행됩니다.
 -->
@@ -77,7 +77,7 @@
   /* 정답 타일: 초록 대신 배경 사진(5x5 조각)이 드러남 */
   .tile.green{
     background-color:#46506a;
-    background-image:var(--bg, url('bg.jpg'));
+    background-image:var(--bgimg, url('bg.jpg'));
     background-size:500% 500%;
     background-repeat:no-repeat;
     border-color:#3e4660;color:#fff;
@@ -90,7 +90,7 @@
   #board.photo-board .row{gap:0;}
   .tile.photo-tile{
     background-color:#46506a;
-    background-image:var(--bg, url('bg.jpg'));
+    background-image:var(--bgimg, url('bg.jpg'));
     background-size:500% 500%;
     background-repeat:no-repeat;
     border:0;border-radius:0;color:transparent;text-shadow:none;
@@ -191,14 +191,14 @@
   <div class="modal">
     <h2>플레이 방법</h2>
     <p>한글 단어를 자모 <b>5개</b>로 풀어쓴 뒤, <b>다섯 번</b> 안에 맞혀보세요!</p>
-    <div class="legend"><span class="swatch" style="background-color:#46506a;background-image:var(--bg,url('bg.jpg'));background-size:cover;background-position:center;"></span><b>이핑재핑</b> — 자모와 자리가 모두 정답!</div>
+    <div class="legend"><span class="swatch" style="background-color:#46506a;background-image:var(--bgimg,url('bg.jpg'));background-size:cover;background-position:center;"></span><b>이핑재핑</b> — 자모와 자리가 모두 정답!</div>
     <div class="legend"><span class="swatch" style="background:var(--orange)"></span><b>주황</b> — 단어엔 있지만 자리가 달라요.</div>
     <div class="legend"><span class="swatch" style="background:var(--gray)"></span><b>회색</b> — 이 자모는 단어에 없어요.</div>
     <p>같은 자모가 여러 번 있으면 정답에 든 개수만큼만 색이 칠해져요.</p>
     <p><b>복합모음·쌍자음·겹받침</b>은 더 작은 자모로 나뉘어요.<br>
        예) <b>사과</b>는 ㅅ·ㅏ·ㄱ·ㅗ·ㅏ 다섯 자모! 복합모음 'ㅘ'가 ㅗ·ㅏ 로 풀어져요.</p>
     <button class="close" id="closeHelp">확인</button>
-    <div style="text-align:center;font-size:11px;color:#c4c4c4;margin-top:10px;">v1.0.22</div>
+    <div style="text-align:center;font-size:11px;color:#c4c4c4;margin-top:10px;">v1.0.23</div>
   </div>
 </div>
 
@@ -477,7 +477,7 @@ function newGame(){
   answerJamo = decompose(answer);
   // 배경 사진 랜덤 선택 (root에 지정 → 보드 타일과 도움말 견본 모두 사용)
   const bg = BG_LIST[Math.floor(Math.random()*BG_LIST.length)];
-  document.documentElement.style.setProperty('--bg', `url('${bg}')`);
+  document.documentElement.style.setProperty('--bgimg', `url('${bg}')`);
   curRow = 0;
   current = [];
   busy = false;
