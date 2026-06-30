@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
   이핑재핑타이핑 (Hangul Jamo Wordle)
-  @version v1.0.23
+  @version v1.0.24
   한글 단어를 자모 5개로 풀어쓴 뒤, 다섯 번 안에 맞히는 게임.
   단일 HTML 파일 — 브라우저에서 바로 실행됩니다.
 -->
@@ -198,7 +198,7 @@
     <p><b>복합모음·쌍자음·겹받침</b>은 더 작은 자모로 나뉘어요.<br>
        예) <b>사과</b>는 ㅅ·ㅏ·ㄱ·ㅗ·ㅏ 다섯 자모! 복합모음 'ㅘ'가 ㅗ·ㅏ 로 풀어져요.</p>
     <button class="close" id="closeHelp">확인</button>
-    <div style="text-align:center;font-size:11px;color:#c4c4c4;margin-top:10px;">v1.0.23</div>
+    <div style="text-align:center;font-size:11px;color:#c4c4c4;margin-top:10px;">v1.0.24</div>
   </div>
 </div>
 
@@ -470,7 +470,7 @@ function revealPhoto(){
   });
 }
 
-const BG_LIST = ['bg.jpg','bg2.jpg','bg3.jpg','bg4.jpg','bg5.jpg','bg6.jpg','bg7.jpg'];
+const BG_LIST = ['bg.jpg','bg2.jpg','bg3.jpg','bg4.jpg','bg5.jpg','bg6.jpg','bg7.jpg','bg8.jpg'];
 
 function newGame(){
   answer = WORDS[Math.floor(Math.random()*WORDS.length)];
